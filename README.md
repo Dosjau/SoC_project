@@ -6,7 +6,7 @@ This is the repository connected to the final project of the course SoC design. 
 
 | File | Owner | What it does |
 |---|---|---|
-| `model/Maxom_fcs_noncascaded.slx`, `model/PMSMpara.m` | Dayana | Simulink reference (controller + Simscape motor). Exports golden traces to `traces/*.csv`. |
+| `model/Maxom_fcs_noncascaded.slx`, `model/PMSMpara.m` | Dayana | Simulink reference (controller + Simscape motor) |
 | `hls/fcs_mpc.c`, `hls/fcs_mpc.h` | Anastasiia | FCS-MPC controller. Input: phase currents, rotor angle, speed, speed reference and motor parameters. Output: 3-bit switching state (Sa, Sb, Sc). The same source is synthesized with Vitis HLS (FPGA) and compiled with gcc for the ARM (CPU baseline). |
 | `arm/motor.c`, `arm/motor.h` | Eskil | Discrete PMSM model. Input: 3-bit switching state and load torque. Output: phase currents, rotor angle and speed. Keeps one state per motor, so N motors can be simulated. |
 | `vivado/block_design.tcl` | Even | Block design: Zynq PS, AXI DMA, controller IP and cycle counter. Produces the bitstream (`.bit`, `.hwh`). |
